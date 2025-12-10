@@ -1,0 +1,59 @@
+---
+import Footer from '../components/Footer.astro'; // <-- IMPORTATION CRUCIALE
+import '../styles/global.css'; 
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Horgnies Robin - Portfolio</title> 
+    
+    </head>
+<body>
+    
+    <div id="wrapper">
+        <main>
+            <slot /> </main>
+        
+        <Footer /> </div>
+
+</body>
+</html>
+
+<style is:global>
+    /* VARIABLES CSS */
+    :root {
+        --color-primary-bg: #a5b3c8ff; 
+        --color-accent: #1E90FF; 
+        --color-text-dark: #333333;
+    }
+    
+    /* Reset CSS + Styles Flexbox pour le Footer */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: sans-serif; /* Mettez votre police de Figma ici */
+        color: var(--color-text-dark);
+        background-color: white; 
+    }
+
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Doit prendre au moins la hauteur de la fenêtre */
+    }
+    main {
+        flex-grow: 1; /* Le contenu principal prend tout l'espace disponible */
+    }
+</style>

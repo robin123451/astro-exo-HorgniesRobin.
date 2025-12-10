@@ -1,0 +1,44 @@
+---
+// Récupère l'année en cours pour le copyright (bonne pratique)
+const currentYear = new Date().getFullYear(); 
+---
+<footer>
+    <p>
+        &copy; {currentYear} Robin Horgnies - 
+        
+        <a href="/mentions-legales">Mentions Légales</a>
+    </p>
+</footer>
+
+<style>
+    /* Styles pour la barre du bas (Footer) */
+    footer {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        
+        /* Ajustez ces couleurs pour correspondre au design Figma si la barre du bas a une couleur spécifique */
+        background-color: #333; 
+        color: white;
+        
+        /* Assurez-vous que le texte soit au-dessus de tout le reste */
+        z-index: 10; 
+    }
+    
+    footer p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+    
+    footer a {
+        color: #ddd; /* Couleur claire pour le lien */
+        text-decoration: none;
+    }
+    
+    /* Style de survol (Hover) exigé par la page Composant Figma */
+    footer a:hover {
+        /* Utilise la couleur d'accent définie dans Layout.astro/CSS global */
+        color: var(--color-accent, #1E90FF); 
+        text-decoration: underline;
+    }
+</style>

@@ -1,0 +1,92 @@
+---
+// Importe le Layout pour réutiliser l'en-tête, les styles globaux et le Footer
+import Layout from '../layouts/Layout.astro';
+
+// Définit le titre de la page pour le Layout
+const title = 'Mentions Légales';
+---
+
+<Layout title={title}>
+    
+    <section class="mentions-container">
+        
+        <p class="back-link"><a href="/">← Retour à l'accueil</a></p>
+
+        <h1>Mentions Légales</h1>
+        
+        <p>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
+
+        <h2>Éditeur du Site</h2>
+        <p>Le présent site est édité par :</p>
+        <p>
+            **Robin Horgnies**<br>
+            Rue du Moulin 7<br>
+            Charleroi , 6200<br>
+            Contact : robinhorgnies@example.be
+        </p>
+
+        <h2>Hébergement</h2>
+        <p>L'hébergement du site est assuré par la société :</p>
+        <p>
+            **Netlify**<br>
+            Netlify, Inc.<br>
+            2325 3rd Street, Suite 296, San Francisco, CA 94107
+        </p>
+        
+        <h2>Propriété Intellectuelle</h2>
+        <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Toute reproduction ou représentation, totale ou partielle, est strictement interdite sans autorisation écrite préalable.</p>
+        
+        <h2>Collecte des données personnelles</h2>
+        <p>Ce site est un site vitrine statique et ne collecte aucune donnée personnelle via formulaire ou tracker.</p>
+
+    </section>
+
+</Layout>
+
+<style>
+    /* Styles spécifiques pour que la page soit lisible et centrée */
+    .mentions-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+    .back-link {
+        margin-bottom: 30px;
+    }
+    .mentions-container h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        /* Utilisation de la police de titre si importée (Montserrat) */
+        font-family: 'Montserrat', sans-serif;
+    }
+    .mentions-container h2 {
+        margin-top: 40px;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+        color: #333;
+    }
+    .mentions-container p {
+        margin-bottom: 15px;
+    }
+    .mentions-container a {
+        /* Styles pour les liens, en cohérence avec le reste du site */
+        text-decoration: none;
+        color: #333;
+    }
+    
+    /* Respect du style survol de la page Composant Figma */
+    .mentions-container a:hover {
+        color: var(--color-accent, #1E90FF); /* Utilise la couleur d'accent définie dans Layout.astro */
+        text-decoration: underline;
+    }
+    
+    /* Responsive basique pour les petits écrans */
+    @media (max-width: 600px) {
+        .mentions-container {
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+    }
+</style>
